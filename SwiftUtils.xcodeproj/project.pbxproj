@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		4C2AD78F1D605B2D003AF2DD /* SwiftUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2AD7851D605B2D003AF2DD /* SwiftUtils.framework */; };
 		4C2AD7941D605B2D003AF2DD /* SwiftUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AD7931D605B2D003AF2DD /* SwiftUtilsTests.swift */; };
-		4C2AD7961D605B2D003AF2DD /* SwiftUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C2AD7881D605B2D003AF2DD /* SwiftUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C2AD7A21D605C08003AF2DD /* SnowflakeIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AD7A11D605C08003AF2DD /* SnowflakeIdGenerator.swift */; };
+		4CC4BC261D6158D0000EF79D /* DateTimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC4BC251D6158D0000EF79D /* DateTimeUtils.swift */; };
+		4CC4BC281D615D5F000EF79D /* SyncUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC4BC271D615D5F000EF79D /* SyncUtils.swift */; };
+		4CC4BC2C1D620F32000EF79D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CC4BC291D620F32000EF79D /* LICENSE.txt */; };
+		4CC4BC2D1D620F32000EF79D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4CC4BC2A1D620F32000EF79D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +28,15 @@
 
 /* Begin PBXFileReference section */
 		4C2AD7851D605B2D003AF2DD /* SwiftUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C2AD7881D605B2D003AF2DD /* SwiftUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUtils.h; sourceTree = "<group>"; };
 		4C2AD7891D605B2D003AF2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C2AD78E1D605B2D003AF2DD /* SwiftUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2AD7931D605B2D003AF2DD /* SwiftUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUtilsTests.swift; sourceTree = "<group>"; };
 		4C2AD7951D605B2D003AF2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2AD7A11D605C08003AF2DD /* SnowflakeIdGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowflakeIdGenerator.swift; sourceTree = "<group>"; };
+		4CC4BC251D6158D0000EF79D /* DateTimeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeUtils.swift; sourceTree = "<group>"; };
+		4CC4BC271D615D5F000EF79D /* SyncUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncUtils.swift; sourceTree = "<group>"; };
+		4CC4BC291D620F32000EF79D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		4CC4BC2A1D620F32000EF79D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 		4C2AD77B1D605B2D003AF2DD = {
 			isa = PBXGroup;
 			children = (
+				4CC4BC291D620F32000EF79D /* LICENSE.txt */,
+				4CC4BC2A1D620F32000EF79D /* README.md */,
 				4C2AD7871D605B2D003AF2DD /* SwiftUtils */,
 				4C2AD7921D605B2D003AF2DD /* SwiftUtilsTests */,
 				4C2AD7861D605B2D003AF2DD /* Products */,
@@ -71,8 +81,10 @@
 		4C2AD7871D605B2D003AF2DD /* SwiftUtils */ = {
 			isa = PBXGroup;
 			children = (
-				4C2AD7881D605B2D003AF2DD /* SwiftUtils.h */,
 				4C2AD7891D605B2D003AF2DD /* Info.plist */,
+				4C2AD7A11D605C08003AF2DD /* SnowflakeIdGenerator.swift */,
+				4CC4BC251D6158D0000EF79D /* DateTimeUtils.swift */,
+				4CC4BC271D615D5F000EF79D /* SyncUtils.swift */,
 			);
 			path = SwiftUtils;
 			sourceTree = "<group>";
@@ -93,7 +105,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C2AD7961D605B2D003AF2DD /* SwiftUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +159,7 @@
 				TargetAttributes = {
 					4C2AD7841D605B2D003AF2DD = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					4C2AD78D1D605B2D003AF2DD = {
@@ -179,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC4BC2C1D620F32000EF79D /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC4BC261D6158D0000EF79D /* DateTimeUtils.swift in Sources */,
+				4C2AD7A21D605C08003AF2DD /* SnowflakeIdGenerator.swift in Sources */,
+				4CC4BC2D1D620F32000EF79D /* README.md in Sources */,
+				4CC4BC281D615D5F000EF79D /* SyncUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +337,7 @@
 		4C2AD79A1D605B2D003AF2DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -327,10 +345,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftUtils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.btnguyen2k.ios.SwiftUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -338,6 +358,7 @@
 		4C2AD79B1D605B2D003AF2DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -345,6 +366,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftUtils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.btnguyen2k.ios.SwiftUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -394,6 +416,7 @@
 				4C2AD79B1D605B2D003AF2DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C2AD79C1D605B2D003AF2DD /* Build configuration list for PBXNativeTarget "SwiftUtilsTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +425,7 @@
 				4C2AD79E1D605B2D003AF2DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
