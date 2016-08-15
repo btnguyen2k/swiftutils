@@ -18,8 +18,4 @@ Third party libraries are distributed under their own license(s).
 
 ## Release Notes ##
 
-Latest release version: `1.0`. See [RELEASE-NOTES.md](RELEASE-NOTES.md).
-
-### 1.0 - 2016-08-15 ###
-
-First release.
+Latest release version: `1.0`. See [RELEASE-NOTES.md](RELEASE-NOTES.md) for details.

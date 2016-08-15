@@ -6,6 +6,7 @@ import UIKit
 let idGen = SnowflakeIdGenerator(nodeId: 12345)
 let idGen2 = SnowflakeIdGenerator()
 
+/*
 idGen.generateId64()
 idGen.generateId64Hex()
 idGen.generateId64Bin()
@@ -17,13 +18,17 @@ idGen2.generateId64Bin()
 idGen.getLastTimestampMillisec()
 idGen2.getLastTimestampMillisec()
 
-//idGen.generateId128()
-//idGen.generateId128Hex()
-//idGen.generateId128Bin()
+idGen.generateId128()
+idGen.generateId128Hex()
+idGen.generateId128Bin()
 
-//idGen2.generateId128()
-//idGen2.generateId128Hex()
-//idGen2.generateId128Bin()
+idGen2.generateId128()
+idGen2.generateId128Hex()
+idGen2.generateId128Bin()
+*/
 
-String(12345, radix: 2)
-String(83630470, radix: 2)
+//String(12345, radix: 2)
+//String(83630470, radix: 2)
+var idHex = idGen.generateId64Hex()
+var timestamp = SnowflakeIdGenerator.extractTimestamp64Hex(idHex: idHex)
+var date = SnowflakeIdGenerator.extractTimestamp64HexAsDate(idHex: idHex)

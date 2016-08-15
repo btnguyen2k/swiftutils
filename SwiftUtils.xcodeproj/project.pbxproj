@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1BAB781D6210A1003B699E /* RELEASE-NOTES.md in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BAB771D6210A1003B699E /* RELEASE-NOTES.md */; };
 		4C2AD78F1D605B2D003AF2DD /* SwiftUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2AD7851D605B2D003AF2DD /* SwiftUtils.framework */; };
 		4C2AD7941D605B2D003AF2DD /* SwiftUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AD7931D605B2D003AF2DD /* SwiftUtilsTests.swift */; };
 		4C2AD7A21D605C08003AF2DD /* SnowflakeIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AD7A11D605C08003AF2DD /* SnowflakeIdGenerator.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C1BAB771D6210A1003B699E /* RELEASE-NOTES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "RELEASE-NOTES.md"; sourceTree = "<group>"; };
 		4C2AD7851D605B2D003AF2DD /* SwiftUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2AD7891D605B2D003AF2DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C2AD78E1D605B2D003AF2DD /* SwiftUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 		4C2AD77B1D605B2D003AF2DD = {
 			isa = PBXGroup;
 			children = (
+				4C1BAB771D6210A1003B699E /* RELEASE-NOTES.md */,
 				4CC4BC291D620F32000EF79D /* LICENSE.txt */,
 				4CC4BC2A1D620F32000EF79D /* README.md */,
 				4C2AD7871D605B2D003AF2DD /* SwiftUtils */,
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1BAB781D6210A1003B699E /* RELEASE-NOTES.md in Sources */,
 				4CC4BC261D6158D0000EF79D /* DateTimeUtils.swift in Sources */,
 				4C2AD7A21D605C08003AF2DD /* SnowflakeIdGenerator.swift in Sources */,
 				4CC4BC2D1D620F32000EF79D /* README.md in Sources */,
