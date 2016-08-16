@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Synchronized a code block
+// Synchronizes a code block
 // Credit: http://yuhua-chen.logdown.com/posts/253806-synchronized-on-swift
 // Usage:
 // synchronizd(self) {

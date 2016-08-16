@@ -4,7 +4,9 @@
 //
 //  Created by Thanh Nguyen on 8/15/16.
 //  Copyright © 2016 Thanh Nguyen. All rights reserved.
-//
+//----------------------------------------------------------------------
+//  Useful DateTime utilities.
+//----------------------------------------------------------------------
 
 import Foundation
 
