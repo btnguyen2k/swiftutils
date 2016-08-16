@@ -23,7 +23,7 @@ public class DateTimeUtils {
         return UInt64(NSDate().timeIntervalSince1970)
     }
 
-    // Waits till clock moves to the next millisecond.
+    // Waits until clock moves to the next millisecond.
     //
     // @param currentMillisec
     // @return the "next" millisecond
@@ -35,7 +35,7 @@ public class DateTimeUtils {
         return nextMillisec
     }
 
-    // Waits till clock moves to the next second.
+    // Waits until clock moves to the next second.
     //
     // @param currentSecond
     // @return the "next" second

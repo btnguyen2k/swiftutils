@@ -20,11 +20,3 @@ import Foundation
     objc_sync_exit(lock)
     return result
 }
-
-// Synchronized a code block that returns a UInt64
-//@discardableResult public func synchronizdUInt64(lock: AnyObject, closure:()->UInt64) -> UInt64 {
-//    objc_sync_enter(lock)
-//    let result = closure()
-//    objc_sync_exit(lock)
-//    return result
-//}
