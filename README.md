@@ -1,7 +1,7 @@
 SwiftUtils
 ==========
 
-Utility Library in Swift.
+Utility Library in Swift (3.0+).
 
 By Thanh Ba Nguyen (btnguyen2k (at) gmail.com).
 
@@ -19,6 +19,8 @@ Third party libraries are distributed under their own license(s).
 ## Release Notes ##
 
 Latest release version: `1.0`. See [RELEASE-NOTES.md](RELEASE-NOTES.md) for details.
+
+Notes: Swift 3+ is required!
 
 SnowflakeIdGenerator
 --------------------

@@ -46,7 +46,7 @@ public class SnowflakeIdGenerator {
     private var sequenceMillisec      :UInt64 = 0
     private var lastTimestampMillisec :UInt64 = 0
 
-    init(nodeId: UInt64 = 0) {
+    init(_ nodeId: UInt64 = 0) {
         if ( nodeId != 0 ) {
             self.nodeId = nodeId
         } else {
@@ -138,7 +138,7 @@ public class SnowflakeIdGenerator {
                 if (sequence > SnowflakeIdGenerator.MAX_SEQUENCE_64) {
                     // reset sequence
                     self.sequenceMillisec = 0
-                    DateTimeUtils.waitTillNextMillisec(currentMillisec: timestamp)
+                    DateTimeUtils.waitTillNextMillisec(timestamp)
                     return self.generateId64()
                 } else {
                     self.sequenceMillisec = sequence
@@ -241,7 +241,7 @@ public class SnowflakeIdGenerator {
         let result = synchronizd(lock: self) {
             let timestamp: UInt64 = DateTimeUtils.currentUnixTimestampMillisec()
             if (timestamp == self.lastTimestampMillisec) {
-                DateTimeUtils.waitTillNextMillisec(currentMillisec: timestamp)
+                DateTimeUtils.waitTillNextMillisec(timestamp)
                 return self.generateId64Nil()
             } else {
                 self.lastTimestampMillisec = timestamp
@@ -328,7 +328,7 @@ public class SnowflakeIdGenerator {
                 if (sequence > SnowflakeIdGenerator.MAX_SEQUENCE_128) {
                     // reset sequence
                     self.sequenceMillisec = 0
-                    DateTimeUtils.waitTillNextMillisec(currentMillisec: timestamp)
+                    DateTimeUtils.waitTillNextMillisec(timestamp)
                     return self.generateId128()
                 } else {
                     self.sequenceMillisec = sequence
