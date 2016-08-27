@@ -97,8 +97,8 @@ Datetime utility class.
 
 - `static currentUnixTimestampMillisec() -> UInt64`: get current UNIX timestamp in milliseconds.
 - `static currentUnixTimestampSecond() -> UInt64`: get current UNIX timestamp in seconds.
-- `static waitTillNextMillisec(currentMillisec: UInt64) -> UInt64`: wait until clock moves to the next millisecond (method returns the "next" millisecond).
-- `static waitTillNextSecond(currentSecond: UInt64) -> UInt64`: wait until clock moves to the next second (method returns the "next" second).
+- `static waitTillNextMillisec(currentMillisec: UInt64) -> UInt64`: wait until clock moves to the next millisecond (return the "next" millisecond).
+- `static waitTillNextSecond(currentSecond: UInt64) -> UInt64`: wait until clock moves to the next second (return the "next" second).
 - `static startOfSecond(date: NSDate) -> NSDate`: reset to start of the second of a NSDate
 - `static startOfMinute(date: NSDate) -> NSDate`: reset to start of the minute of a NSDate
 - `static startOfHour(date: NSDate) -> NSDate`  : reset to start of the hour of a NSDate
