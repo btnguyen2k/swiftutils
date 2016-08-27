@@ -66,14 +66,14 @@ public class DateTimeUtils {
                                 Calendar.Component.calendar,
                                 Calendar.Component.timeZone]
 
-    // Resets to start of second of a NSDate
+    // Resets to start of the second of a NSDate
     public static func startOfSecond(_ date: NSDate) -> NSDate {
         var comps = NSCalendar.current.dateComponents(FULL_DATE_COMPONENTS, from: date as Date)
         comps.setValue(0, for: Calendar.Component.nanosecond)
         return NSCalendar.current.date(from: comps)!
     }
 
-    // Resets to start of minute of a NSDate
+    // Resets to start of the minute of a NSDate
     public static func startOfMinute(_ date: NSDate) -> NSDate {
         let d = startOfSecond(date)
         var comps = NSCalendar.current.dateComponents(FULL_DATE_COMPONENTS, from: d as Date)
@@ -81,7 +81,7 @@ public class DateTimeUtils {
         return NSCalendar.current.date(from: comps)!
     }
 
-    // Resets to start of hour of a NSDate
+    // Resets to start of the hour of a NSDate
     public static func startOfHour(_ date: NSDate) -> NSDate {
         let d = startOfMinute(date)
         var comps = NSCalendar.current.dateComponents(FULL_DATE_COMPONENTS, from: d as Date)
@@ -89,7 +89,7 @@ public class DateTimeUtils {
         return NSCalendar.current.date(from: comps)!
     }
 
-    // Resets to start of day of a NSDate
+    // Resets to start of the day of a NSDate
     public static func startOfDay(_ date: NSDate) -> NSDate {
         let d = startOfHour(date)
         var comps = NSCalendar.current.dateComponents(FULL_DATE_COMPONENTS, from: d as Date)
@@ -102,7 +102,7 @@ public class DateTimeUtils {
         return startOfDay(date)
     }
 
-    // Resets to start of month of a NSDate
+    // Resets to start of the month of a NSDate
     public static func startOfMonth(_ date: NSDate) -> NSDate {
         let d = startOfDay(date)
         var comps = NSCalendar.current.dateComponents(FULL_DATE_COMPONENTS, from: d as Date)
@@ -110,7 +110,7 @@ public class DateTimeUtils {
         return NSCalendar.current.date(from: comps)!
     }
 
-    // Resets to start of year of a NSDate
+    // Resets to start of the year of a NSDate
     public static func startOfYear(_ date: NSDate) -> NSDate {
         let d = startOfMonth(date)
         var comps = NSCalendar.current.dateComponents(FULL_DATE_COMPONENTS, from: d as Date)
@@ -119,7 +119,7 @@ public class DateTimeUtils {
     }
 
 
-    // Resets to start of week of a NSDate
+    // Resets to start of the week of a NSDate
     public static func startOfWeek(_ date: NSDate) -> NSDate {
         let CAL = NSCalendar.current
         var result = startOfDate(date) as Date

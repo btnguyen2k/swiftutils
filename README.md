@@ -18,7 +18,7 @@ Third party libraries are distributed under their own license(s).
 
 ## Release Notes ##
 
-Latest release version: `1.0`. See [RELEASE-NOTES.md](RELEASE-NOTES.md) for details.
+Latest release version: `1.1`. See [RELEASE-NOTES.md](RELEASE-NOTES.md) for details.
 
 Notes: Swift 3+ is required!
 
@@ -99,3 +99,11 @@ Datetime utility class.
 - `static currentUnixTimestampSecond() -> UInt64`: get current UNIX timestamp in seconds.
 - `static waitTillNextMillisec(currentMillisec: UInt64) -> UInt64`: wait until clock moves to the next millisecond (method returns the "next" millisecond).
 - `static waitTillNextSecond(currentSecond: UInt64) -> UInt64`: wait until clock moves to the next second (method returns the "next" second).
+- `static startOfSecond(date: NSDate) -> NSDate`: reset to start of the second of a NSDate
+- `static startOfMinute(date: NSDate) -> NSDate`: reset to start of the minute of a NSDate
+- `static startOfHour(date: NSDate) -> NSDate`  : reset to start of the hour of a NSDate
+- `static startOfDay(date: NSDate) -> NSDate`   : reset to start of the day of a NSDate
+- `static startOfDate(date: NSDate) -> NSDate`  : alias of `startOfDay`
+- `static startOfMonth(date: NSDate) -> NSDate` : reset to start of the month of a NSDate
+- `static startOfYear(date: NSDate) -> NSDate`  : reset to start of the year of a NSDate
+- `static startOfWeek(date: NSDate) -> NSDate`  : reset to start of the week of a NSDate
