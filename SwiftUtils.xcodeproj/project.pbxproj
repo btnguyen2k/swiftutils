@@ -15,6 +15,8 @@
 		4CC4BC281D615D5F000EF79D /* SyncUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC4BC271D615D5F000EF79D /* SyncUtils.swift */; };
 		4CC4BC2C1D620F32000EF79D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CC4BC291D620F32000EF79D /* LICENSE.txt */; };
 		4CC4BC2D1D620F32000EF79D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4CC4BC2A1D620F32000EF79D /* README.md */; };
+		4CC503291D8BB30300967A15 /* README-DateTimeUtils.md in Sources */ = {isa = PBXBuildFile; fileRef = 4CC503281D8BB30300967A15 /* README-DateTimeUtils.md */; };
+		4CC5032B1D8BB55300967A15 /* README-SnowflakeIdGenerator.md in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5032A1D8BB55300967A15 /* README-SnowflakeIdGenerator.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		4CC4BC271D615D5F000EF79D /* SyncUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncUtils.swift; sourceTree = "<group>"; };
 		4CC4BC291D620F32000EF79D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		4CC4BC2A1D620F32000EF79D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4CC503281D8BB30300967A15 /* README-DateTimeUtils.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-DateTimeUtils.md"; sourceTree = "<group>"; };
+		4CC5032A1D8BB55300967A15 /* README-SnowflakeIdGenerator.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "README-SnowflakeIdGenerator.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 		4C2AD77B1D605B2D003AF2DD = {
 			isa = PBXGroup;
 			children = (
+				4CC5032A1D8BB55300967A15 /* README-SnowflakeIdGenerator.md */,
+				4CC503281D8BB30300967A15 /* README-DateTimeUtils.md */,
 				4C1BAB771D6210A1003B699E /* RELEASE-NOTES.md */,
 				4CC4BC291D620F32000EF79D /* LICENSE.txt */,
 				4CC4BC2A1D620F32000EF79D /* README.md */,
@@ -215,6 +221,8 @@
 				4C1BAB781D6210A1003B699E /* RELEASE-NOTES.md in Sources */,
 				4CC4BC261D6158D0000EF79D /* DateTimeUtils.swift in Sources */,
 				4C2AD7A21D605C08003AF2DD /* SnowflakeIdGenerator.swift in Sources */,
+				4CC5032B1D8BB55300967A15 /* README-SnowflakeIdGenerator.md in Sources */,
+				4CC503291D8BB30300967A15 /* README-DateTimeUtils.md in Sources */,
 				4CC4BC2D1D620F32000EF79D /* README.md in Sources */,
 				4CC4BC281D615D5F000EF79D /* SyncUtils.swift in Sources */,
 			);

@@ -1,6 +1,14 @@
 SwiftUtils Release Notes
 ========================
 
+1.1.1 - 2016-09-16
+------------------
+
+- Migrated to Swift3/XCode8.
+- `DateTimeUtils`: input/output type changed from `NSDate` to `Date`
+- Documents updated.
+
+
 1.1 - 2016-08-27
 ----------------
 

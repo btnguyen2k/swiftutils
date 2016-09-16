@@ -8,12 +8,23 @@
 
 import Foundation
 
-// Synchronizes a code block
-// Credit: http://yuhua-chen.logdown.com/posts/253806-synchronized-on-swift
-// Usage:
-// synchronizd(self) {
-//     .... code here ....
-// }
+/**
+  Synchronizes a code block
+
+  Credit: http://yuhua-chen.logdown.com/posts/253806-synchronized-on-swift
+
+ Usage:
+ 
+ ```
+    synchronizd(self) {
+      .... code here ....
+    }
+ ```
+ 
+ - Parameter lock: object for mutex lock
+ - Parameter closure: code to execute
+ - Returns: the returned value from closure
+ */
 @discardableResult public func synchronizd(lock: AnyObject, closure:()->Any?) -> Any? {
     objc_sync_enter(lock)
     let result = closure()
