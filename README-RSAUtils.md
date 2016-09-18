@@ -23,13 +23,13 @@ This small library addresses all 3 problems above.
 Usage
 -----
 
-* Notes: *
+*Notes:*
 
 >>> Currently only `PKCS#8 private key` and `X509 public key` are supported.
 >>> On disk, `PKCS#8 private key` file begins with `-----BEGIN PRIVATE KEY-----` and ends with `-----END PRIVATE KEY-----`.
 >>> Likewise, `X509 public key` file begins with `-----BEGIN PUBLIC KEY-----` and ends with `-----END PUBLIC KEY-----`.
 
-* Obtain `PKCS#8 private key` and `X509 public key`: *
+*Obtain `PKCS#8 private key` and `X509 public key`:*
 
 Usually you have the `PKCS#1 private key` in a `.pem` file (this file starts with `-----BEGIN RSA PRIVATE KEY-----` and ends with `-----END RSA PRIVATE KEY-----`). To convert to `PKCS#8` format, use the following command:
 
@@ -95,7 +95,7 @@ CsY3xnS5JURE/4h4DQIDAQAB
 -----END PUBLIC KEY-----
 ```
 
-* Functions: *
+*Functions:*
 
 Key management functions:
 
