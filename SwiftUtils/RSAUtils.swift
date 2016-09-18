@@ -341,7 +341,7 @@ public class RSAUtils {
     public static func encryptWithRSAKey(_ data: Data, rsaKeyRef: SecKey, padding: SecPadding) -> Data? {
         let blockSize = SecKeyGetBlockSize(rsaKeyRef)
         let dataSize = data.count / MemoryLayout<UInt8>.size
-        let maxChunkSize = padding.rawValue==SecPadding.OAEP.rawValue ? (blockSize - 42) : (blockSize - 11)
+        let maxChunkSize = padding==SecPadding.OAEP ? (blockSize - 42) : (blockSize - 11)
 
         var dataAsArray = [UInt8](repeating: 0, count: dataSize)
         (data as NSData).getBytes(&dataAsArray, length: dataSize)
