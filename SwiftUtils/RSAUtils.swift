@@ -433,6 +433,10 @@ public class RSAUtils {
                 }
             }
         }
+        if ( idxNextZero-idxFirstZero-1 == 0 ) {
+            idxNextZero = idxFirstZero
+            idxFirstZero = -1
+        }
         var newData = [UInt8](repeating: 0, count: idxNextZero-idxFirstZero-1)
         for i in idxFirstZero+1..<idxNextZero {
             newData[i-idxFirstZero-1] = data[i]
