@@ -1,6 +1,12 @@
 SwiftUtils Release Notes
 ========================
 
+1.2.0 - 2016-09-17
+------------------
+
+- `RSAUtils`: utility class to encrypt/decrypt data with RSA public/private key.
+
+
 1.1.1 - 2016-09-16
 ------------------
 
