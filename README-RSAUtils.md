@@ -126,6 +126,16 @@ Encryption/Decryption functions:
 - `static func decryptWithRSAPrivateKey(encryptedData: Data, privkeyBase64: String, tagName: String) throws -> Data?`: Decrypts an encrypted data using a RSA private key. Also, the private key will be stored in keychain specified by `tagName`.
 
 
+Encrypt/Decrypt Large Amount of Data
+------------------------------------
+
+The amount of data that can be encrypted in one go is `key's size - 11`. For example, if the key's size is 256 bytes (2048 bits), maximum amount of data that can be encrypted is 245 bytes.
+
+In order to encrypt a large amount of data, `encryptXXX()` function splits the large data into chunks of size `key's size - 11`, encrypts each chunk and concatenates encrypted chunks into the final result. 
+
+Decryption performs similarly: encrypted data is splitted into chunks of size `key's size`, each chunk is then decrypted and  concatenated into the final result.
+
+
 Changes
 -------
 
