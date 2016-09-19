@@ -5,6 +5,8 @@ Utility class to encrypt/decrypt data using RSA private/public key.
 
 Objective-C version can be found at [https://github.com/ideawu/Objective-C-RSA](https://github.com/ideawu/Objective-C-RSA)
 
+**Note: if you receive error status -34018 on Xcode8 / iOS 10, enable Keychain Sharing. See: http://stackoverflow.com/questions/38456471/secitemadd-always-returns-error-34018-in-xcode-8-in-ios-10-simulator/38543243#38543243**
+
 
 Introduction
 ------------
