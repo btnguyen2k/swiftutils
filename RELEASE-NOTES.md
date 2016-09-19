@@ -1,6 +1,12 @@
 SwiftUtils Release Notes
 ========================
 
+1.2.1 - 2016-09-18
+------------------
+
+- `RSAUtils`: add support for RSA PKCS#1 private key.
+
+
 1.2.0 - 2016-09-17
 ------------------
 

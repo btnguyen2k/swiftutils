@@ -88,29 +88,32 @@ public class RSAUtils {
     }
 
     /**
-     * Adds a RSA private key to keychain and returns its SecKey reference.
+     * Adds a RSA private key (PKCS#1 or PKCS#8) to keychain and returns its SecKey reference.
      *
-     * - Parameter privkeyBase64: RSA PKCS#8 private key in base64 (data between "-----BEGIN PRIVATE KEY-----" and "-----END PRIVATE KEY-----")
+     * On disk, a PEM RSA PKCS#8 private key file starts with string "-----BEGIN PRIVATE KEY-----", and ends with string "-----END PRIVATE KEY-----"; PKCS#1 private key file starts with string "-----BEGIN RSA PRIVATE KEY-----", and ends with string "-----END RSA PRIVATE KEY-----".
+     *
+     * - Parameter privkeyBase64: RSA private key (PKCS#1 or PKCS#8) in base64
      * - Parameter tagName: tag name to store RSA key to keychain
      *
-     * - Throws: `RSAUtilsError` if the input key is indeed not a private key in PKCS#8 format
+     * - Throws: `RSAUtilsError` if the input key is not a valid PKCS#8 private key
      *
      * - Returns: SecKey reference to the RSA private key.
      */
     @available(iOS, introduced: 1.2.0)
     @discardableResult public static func addRSAPrivateKey(_ privkeyBase64: String, tagName: String) throws -> SecKey? {
+        let fullRange = NSRange(location: 0, length: privkeyBase64.characters.count)
         let regExp = try! NSRegularExpression(pattern: "(-----BEGIN.*?-----)|(-----END.*?-----)|\\s+", options: [])
-        let myPrivkeyBase64 = regExp.stringByReplacingMatches(in: privkeyBase64, options: [], range: NSRange(location: 0, length: privkeyBase64.characters.count), withTemplate: "")
+        let myPrivkeyBase64 = regExp.stringByReplacingMatches(in: privkeyBase64, options: [], range: fullRange, withTemplate: "")
         return try addRSAPrivateKey(base64Decode(myPrivkeyBase64), tagName: tagName)
     }
 
     /**
      * Adds a RSA private key to keychain and returns its SecKey reference.
      *
-     * - Parameter privkey: RSA PKCS#8 private key
+     * - Parameter privkey: RSA private key (PKCS#1 or PKCS#8)
      * - Parameter tagName: tag name to store RSA key to keychain
      *
-     * - Throws: `RSAUtilsError` if the input key is indeed not a private key in PKCS#8 format
+     * - Throws: `RSAUtilsError` if the input key is not a valid PKCS#8 private key
      *
      * - Returns: SecKey reference to the RSA private key.
      */
@@ -144,11 +147,13 @@ public class RSAUtils {
     }
 
     /**
-     * Verifies that the supplied key is infact a PEM RSA private key, and strips its header.
+     * Verifies that the supplied key is in fact a PEM RSA private key, and strips its header.
      *
-     * On disk, a PEM RSA PKCS#8 private key file starts with string "-----BEGIN PRIVATE KEY-----", and ends with string "-----END PRIVATE KEY-----"
+     * If the supplied key is PKCS#8, its ASN.1 header should be stripped. Otherwise (PKCS#1), the whole key data is left intact.
      *
-     * - Parameter privkey: RSA PKCS#8 private key
+     * On disk, a PEM RSA PKCS#8 private key file starts with string "-----BEGIN PRIVATE KEY-----", and ends with string "-----END PRIVATE KEY-----"; PKCS#1 private key file starts with string "-----BEGIN RSA PRIVATE KEY-----", and ends with string "-----END RSA PRIVATE KEY-----".
+     *
+     * - Parameter privkey: RSA private key (PKCS#1 or PKCS#8)
      *
      * - Throws: `RSAUtilsError` if the input key is not a valid RSA PKCS#8 private key
      *
@@ -163,10 +168,10 @@ public class RSAUtils {
         var keyAsArray = [UInt8](repeating: 0, count: privkey.count / MemoryLayout<UInt8>.size)
         (privkey as NSData).getBytes(&keyAsArray, length: privkey.count)
 
-        //magic byte at offset 22, check if it's actually ASN.1
+        //PKCS#8: magic byte at offset 22, check if it's actually ASN.1
         var idx = 22
         if ( keyAsArray[idx] != 0x04 ) {
-            return nil
+            return privkey
         }
         idx += 1
 

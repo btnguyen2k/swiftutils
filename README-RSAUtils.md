@@ -25,9 +25,9 @@ Usage
 
 *Notes:*
 
->>> Currently only `PKCS#8 private key` and `X509 public key` are supported.
->>> On disk, `PKCS#8 private key` file begins with `-----BEGIN PRIVATE KEY-----` and ends with `-----END PRIVATE KEY-----`.
->>> Likewise, `X509 public key` file begins with `-----BEGIN PUBLIC KEY-----` and ends with `-----END PUBLIC KEY-----`.
+>>>Public key: only `X509` public key is supported. On disk, `X509` public key file begins with `-----BEGIN PUBLIC KEY-----` and ends with `-----END PUBLIC KEY-----`.
+>>>
+>>>Private key: `PKCS#1` and `PKCS#8` private keys are supported. On disk, `PKCS#8 private key` file begins with `-----BEGIN PRIVATE KEY-----` and ends with `-----END PRIVATE KEY-----`, `PKCS#1 private key` file begins with `-----BEGIN RSA PRIVATE KEY-----` and ends with `-----END RSA PRIVATE KEY-----`.
 
 *Obtain `PKCS#8 private key` and `X509 public key`:*
 
@@ -102,9 +102,9 @@ Key management functions:
 - `static func getRSAKeyFromKeychain(_ tagName: String) -> SecKey?`: Gets an existing RSA key specified by a tag from keychain.
 - `static func deleteRSAKeyFromKeychain(_ tagName: String)`: Deletes an existing RSA key specified by a tag from keychain.
 - `static func addRSAPrivateKey(_ privkeyBase64: String, tagName: String) throws -> SecKey?`: Adds a RSA private key to keychain and returns its SecKey reference.
-  - The private key is in base-64 PKCS#8 format.
+  - The private key is in base-64 PKCS#1 or PKCS#8 format.
   - Throws `RSAUtilsError` if the input key is not a valid PKCS#8 private key.
-  - `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` can be omitted.
+  - `-----BEGIN PRIVATE KEY-----`, `-----BEGIN RSA PRIVATE KEY-----`, `-----END PRIVATE KEY-----` and `-----END RSA PRIVATE KEY-----` can be omitted.
 - `static func addRSAPublicKey(_ pubkeyBase64: String, tagName: String) throws -> SecKey?`: Adds a RSA public key to keychain and returns its SecKey reference.
   - The public key is in base-64 X509 format.
   - Throws `RSAUtilsError` if the input key is not a valid X509 public key.
@@ -139,4 +139,5 @@ Decryption performs similarly: encrypted data is splitted into chunks of size `k
 Changes
 -------
 
+- Since v1.2.1 - 2016-09-18: add support for RSA PKCS#1 private key.
 - Since v1.2.0 - 2016-09-17: migrated from [https://github.com/btnguyen2k/swift-rsautils](https://github.com/btnguyen2k/swift-rsautils).

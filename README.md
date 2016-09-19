@@ -18,7 +18,7 @@ Third party libraries are distributed under their own license(s).
 
 ## Release Notes ##
 
-Latest release version: `1.2.0`. See [RELEASE-NOTES.md](RELEASE-NOTES.md) for details.
+Latest release version: `1.2.1`. See [RELEASE-NOTES.md](RELEASE-NOTES.md) for details.
 
 
 DateTimeUtils
