@@ -2,42 +2,53 @@
 
 import UIKit
 @testable import SwiftUtils
+//
+//var privKeyStr = "-----BEGIN RSA PRIVATE KEY-----\n" +
+//"MIIEpAIBAAKCAQEAtVDMVHzXEweGJH600LQsa8cpd9lrtwEbU6mOJ6/paKB4GaDpVQLbe1B6vRtE\n" +
+//"QHYVjvJRUZvMpP/C5iNWrI8MCsxp5QfySPU1O+lVOK9/sCZZNZvbjLnNF1MRbgW0cNZ6B69hAPk7\n" +
+//"61+yKYvhLOqQvFbiKj4zsXNdALO9yt5ogP1is0KclBEZjHgv3hWeTQqe2W9qk7W4AyNXML9So5Za\n" +
+//"Ftm4xj/y6N8uRDpJ9WSRJkbZY1C/GaGLOSyCAEdrpqJiv5fHN5JgjCTGA1TZC+XrIVsLh4SRSgaZ\n" +
+//"owgDADvDL7bke0NcZo7YDNn8xEarKURSBqdEkvt6TNipYd3vpSXCLwIDAQABAoIBAQCo/YeT708d\n" +
+//"w1N5TEcGhgco5NV3iMNmK7fmgA+oWcJ366hEar9Opn0eL+JVwsYYNnbdZmf4YfeYiXCDwsgTyLd2\n" +
+//"kRLZjlB5Q2G8VztAvAGMkhFvb7ZvMPVAGgISw2psCNpvszv8Bk+cjvKk2mSi0nTXtTrSGGthpp41\n" +
+//"+1CXdjd8kBqnZGy1PjQDclT5RQOQPppIV1QE5f4HJYsEjipjvEAf9KGcukL5+U2X1EYJue2cfTGH\n" +
+//"VLVj9D5COsEsVX3yoJd7v6+Vv2QFJOkbQ0AR49vxezhoIVyB4Wona8jhMu5nbToB+0xwjtBPnOmr\n" +
+//"KIa9sX8+lamBh8Ig8HCP0GZrpEPhAoGBAOnzQaK/LCCC9RmKS6W16EkTc5lb5AlQqiT2HUsUDFzn\n" +
+//"A3ylTvUtlorsWMQTm1sidvgpFYRzNwGChK/mby55GmD7Ki4E35saXM9O8Sc5K+xHOm/Qm7ug0h/V\n" +
+//"Z3vtPaygvct3Me9QTr3EzV+//LzkP0fydRuCb1yVlgdsh9ixJ393AoGBAMZnk2MN8I9hnZtNxUYH\n" +
+//"K2kmJUYj2kl6RdI4HQJDefrJ6Ax+1sop1+y9wipy/7kaGvEtMjLPWQ1FDlqd63mSKDK8CoHUtppX\n" +
+//"UI79w/d5aAkKBtEYS2opqYHwVoDeBJpMtII9mzGbi//mpK1peB3wKFUw8422eb5oWR2gvUXzp7EJ\n" +
+//"AoGAe683jCs10RprKk2LINjDLZ8zBmkmbiZPTaswYXj/8D3SAhwDWmv3owrBAyi6gbv+2cQetB+V\n" +
+//"fR7bt4NEVHWCFLO04Q+CiCWv24oIxIvdRNWDd4n6S4AClwHj7AjJCnMQ5Hjn1XXHq1xYl76Qh+zD\n" +
+//"5+2vLBQRfAk5gENIrq86CpECgYAM1UA8RPeNXqQCGpqq9+W/7F621bTV0dnYShbeQZ0PMqYWwNGF\n" +
+//"zAUSZAe+FSgjQeQCO4kmrjC1YgUWqWZEu8Zr2avYT/jrrMAiL5nQVQL8qrBcL/UYzc8P/4qo1TN5\n" +
+//"A4MddXynTcdVawa1zL+fOBxzvjHStb3UKg2xk+cKMkNjeQKBgQDJ8bo0s/eMDw5F9oCIEOopCi2N\n" +
+//"qxs6mkglF78bwO39uN92+6yK+Ue92y+DkgeYhr43hLbL7vOZmijPire4hqHsl7wTf/vzwQ0DrXkd\n" +
+//"75r6xcez9oCLa61clSGP2DWSa9b+Bee0ybwWovPDeZAhnyG9rilN93DPFD374l/WREv5gA==\n" +
+//"-----END RSA PRIVATE KEY-----"
+//privKeyStr.characters.count
+//
+//let pattern = "(-----BEGIN.*?-----)|(-----END.*?-----)|\\s+"
+//
+//let regExp = try! NSRegularExpression(pattern: pattern, options: [])
+//
+//privKeyStr = regExp.stringByReplacingMatches(in: privKeyStr, options: [], range: NSRange(location: 0, length: privKeyStr.characters.count), withTemplate: "")
+//privKeyStr.characters.count
 
-var privKeyStr = "-----BEGIN RSA PRIVATE KEY-----\n" +
-"MIIEpAIBAAKCAQEAtVDMVHzXEweGJH600LQsa8cpd9lrtwEbU6mOJ6/paKB4GaDpVQLbe1B6vRtE\n" +
-"QHYVjvJRUZvMpP/C5iNWrI8MCsxp5QfySPU1O+lVOK9/sCZZNZvbjLnNF1MRbgW0cNZ6B69hAPk7\n" +
-"61+yKYvhLOqQvFbiKj4zsXNdALO9yt5ogP1is0KclBEZjHgv3hWeTQqe2W9qk7W4AyNXML9So5Za\n" +
-"Ftm4xj/y6N8uRDpJ9WSRJkbZY1C/GaGLOSyCAEdrpqJiv5fHN5JgjCTGA1TZC+XrIVsLh4SRSgaZ\n" +
-"owgDADvDL7bke0NcZo7YDNn8xEarKURSBqdEkvt6TNipYd3vpSXCLwIDAQABAoIBAQCo/YeT708d\n" +
-"w1N5TEcGhgco5NV3iMNmK7fmgA+oWcJ366hEar9Opn0eL+JVwsYYNnbdZmf4YfeYiXCDwsgTyLd2\n" +
-"kRLZjlB5Q2G8VztAvAGMkhFvb7ZvMPVAGgISw2psCNpvszv8Bk+cjvKk2mSi0nTXtTrSGGthpp41\n" +
-"+1CXdjd8kBqnZGy1PjQDclT5RQOQPppIV1QE5f4HJYsEjipjvEAf9KGcukL5+U2X1EYJue2cfTGH\n" +
-"VLVj9D5COsEsVX3yoJd7v6+Vv2QFJOkbQ0AR49vxezhoIVyB4Wona8jhMu5nbToB+0xwjtBPnOmr\n" +
-"KIa9sX8+lamBh8Ig8HCP0GZrpEPhAoGBAOnzQaK/LCCC9RmKS6W16EkTc5lb5AlQqiT2HUsUDFzn\n" +
-"A3ylTvUtlorsWMQTm1sidvgpFYRzNwGChK/mby55GmD7Ki4E35saXM9O8Sc5K+xHOm/Qm7ug0h/V\n" +
-"Z3vtPaygvct3Me9QTr3EzV+//LzkP0fydRuCb1yVlgdsh9ixJ393AoGBAMZnk2MN8I9hnZtNxUYH\n" +
-"K2kmJUYj2kl6RdI4HQJDefrJ6Ax+1sop1+y9wipy/7kaGvEtMjLPWQ1FDlqd63mSKDK8CoHUtppX\n" +
-"UI79w/d5aAkKBtEYS2opqYHwVoDeBJpMtII9mzGbi//mpK1peB3wKFUw8422eb5oWR2gvUXzp7EJ\n" +
-"AoGAe683jCs10RprKk2LINjDLZ8zBmkmbiZPTaswYXj/8D3SAhwDWmv3owrBAyi6gbv+2cQetB+V\n" +
-"fR7bt4NEVHWCFLO04Q+CiCWv24oIxIvdRNWDd4n6S4AClwHj7AjJCnMQ5Hjn1XXHq1xYl76Qh+zD\n" +
-"5+2vLBQRfAk5gENIrq86CpECgYAM1UA8RPeNXqQCGpqq9+W/7F621bTV0dnYShbeQZ0PMqYWwNGF\n" +
-"zAUSZAe+FSgjQeQCO4kmrjC1YgUWqWZEu8Zr2avYT/jrrMAiL5nQVQL8qrBcL/UYzc8P/4qo1TN5\n" +
-"A4MddXynTcdVawa1zL+fOBxzvjHStb3UKg2xk+cKMkNjeQKBgQDJ8bo0s/eMDw5F9oCIEOopCi2N\n" +
-"qxs6mkglF78bwO39uN92+6yK+Ue92y+DkgeYhr43hLbL7vOZmijPire4hqHsl7wTf/vzwQ0DrXkd\n" +
-"75r6xcez9oCLa61clSGP2DWSa9b+Bee0ybwWovPDeZAhnyG9rilN93DPFD374l/WREv5gA==\n" +
-"-----END RSA PRIVATE KEY-----"
-privKeyStr.characters.count
+let df = DateFormatter()
+df.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
 
-let pattern = "(-----BEGIN.*?-----)|(-----END.*?-----)|\\s+"
-
-let regExp = try! NSRegularExpression(pattern: pattern, options: [])
-
-privKeyStr = regExp.stringByReplacingMatches(in: privKeyStr, options: [], range: NSRange(location: 0, length: privKeyStr.characters.count), withTemplate: "")
-privKeyStr.characters.count
+let d1 = Date()
+df.string(from: d1)
+df.string(from: DateTimeUtils.addWeeks(d1, numWeeks: 2))
 
 
-//let df = DateFormatter()
-//df.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+//df.string(from: DateTimeUtils.startOfSecond(d1))
+
+//df.string(from: DateTimeUtils.addSeconds(d1, numSeconds: 5))
+//df.string(from: DateTimeUtils.addMinutes(d1, numMinutes: 1))
+//df.string(from: DateTimeUtils.addHours(d1, numHours: 1))
+
 //
 //let d1 = Date()
 //df.string(from: d1)

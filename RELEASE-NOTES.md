@@ -1,6 +1,19 @@
 SwiftUtils Release Notes
 ========================
 
+1.3 - 2016-11-22
+------------------
+
+- `DateTimeUtils`: add new utility functions
+  - `addSeconds(_ date: Date, numSeconds: Int) -> Date`
+  - `addMinutes(_ date: Date, numMinutes: Int) -> Date`
+  - `addHours  (_ date: Date, numHours  : Int) -> Date`
+  - `addDays   (_ date: Date, numDays   : Int) -> Date`
+  - `addMonths (_ date: Date, numMonths : Int) -> Date`
+  - `addYears  (_ date: Date, numYears  : Int) -> Date`
+  - `addWeeks  (_ date: Date, numWeeks  : Int) -> Date`
+
+
 1.2.1 - 2016-09-18
 ------------------
 
@@ -24,7 +37,7 @@ SwiftUtils Release Notes
 1.1 - 2016-08-27
 ----------------
 
-- `DateTimeUtils`: utility methods
+- `DateTimeUtils`: utility functions
   - `startOfSecond(_ date: NSDate) -> NSDate`
   - `startOfMinute(_ date: NSDate) -> NSDate`
   - `startOfHour  (_ date: NSDate) -> NSDate`

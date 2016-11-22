@@ -96,6 +96,21 @@ public class DateTimeUtils {
     }
 
     /**
+     * Adds n seconds to a Date object.
+     *
+     * - Parameter date: the input Date object
+     * - Parameter numSeconds: the number of seconds to add
+     *
+     * - Returns: the result Date object
+     */
+    @available(iOS, introduced: 1.3)
+    public static func addSeconds(_ date: Date, numSeconds: Int) -> Date {
+        var comps = Calendar.current.dateComponents(FULL_DATE_COMPONENTS, from: date)
+        comps.second! += numSeconds
+        return Calendar.current.date(from: comps)!
+    }
+
+    /**
      * Resets to start of the minute (second and nanosecond are set to 0s) of a Date object.
      *
      * - Parameter date: the input Date object
@@ -111,6 +126,21 @@ public class DateTimeUtils {
     }
 
     /**
+     * Adds n minutes to a Date object.
+     *
+     * - Parameter date: the input Date object
+     * - Parameter numMinutes: the number of minutes to add
+     *
+     * - Returns: the result Date object
+     */
+    @available(iOS, introduced: 1.3)
+    public static func addMinutes(_ date: Date, numMinutes: Int) -> Date {
+        var comps = Calendar.current.dateComponents(FULL_DATE_COMPONENTS, from: date)
+        comps.minute! += numMinutes
+        return Calendar.current.date(from: comps)!
+    }
+
+    /**
      * Resets to start of the hour (minute, second and nanosecond are set to 0s) of a Date object.
      *
      * - Parameter date: the input Date object
@@ -122,6 +152,21 @@ public class DateTimeUtils {
         let d = startOfMinute(date)
         var comps = Calendar.current.dateComponents(FULL_DATE_COMPONENTS, from: d)
         comps.setValue(0, for: Calendar.Component.minute)
+        return Calendar.current.date(from: comps)!
+    }
+
+    /**
+     * Adds n hours to a Date object.
+     *
+     * - Parameter date: the input Date object
+     * - Parameter numHours: the number of hours to add
+     *
+     * - Returns: the result Date object
+     */
+    @available(iOS, introduced: 1.3)
+    public static func addHours(_ date: Date, numHours: Int) -> Date {
+        var comps = Calendar.current.dateComponents(FULL_DATE_COMPONENTS, from: date)
+        comps.hour! += numHours
         return Calendar.current.date(from: comps)!
     }
 
@@ -149,6 +194,21 @@ public class DateTimeUtils {
     }
 
     /**
+     * Adds n days to a Date object.
+     *
+     * - Parameter date: the input Date object
+     * - Parameter numDays: the number of days to add
+     *
+     * - Returns: the result Date object
+     */
+    @available(iOS, introduced: 1.3)
+    public static func addDays(_ date: Date, numDays: Int) -> Date {
+        var comps = Calendar.current.dateComponents(FULL_DATE_COMPONENTS, from: date)
+        comps.day! += numDays
+        return Calendar.current.date(from: comps)!
+    }
+
+    /**
      * Resets to start of the month (day is set to 1; hour, minute, second and nanosecond are set to 0s) of a Date object.
      *
      * - Parameter date: the input Date object
@@ -161,6 +221,21 @@ public class DateTimeUtils {
         var comps = NSCalendar.current.dateComponents(FULL_DATE_COMPONENTS, from: d)
         comps.setValue(1, for: Calendar.Component.day)
         return NSCalendar.current.date(from: comps)!
+    }
+
+    /**
+     * Adds n months to a Date object.
+     *
+     * - Parameter date: the input Date object
+     * - Parameter numMonths: the number of months to add
+     *
+     * - Returns: the result Date object
+     */
+    @available(iOS, introduced: 1.3)
+    public static func addMonths(_ date: Date, numMonths: Int) -> Date {
+        var comps = Calendar.current.dateComponents(FULL_DATE_COMPONENTS, from: date)
+        comps.month! += numMonths
+        return Calendar.current.date(from: comps)!
     }
 
     /**
@@ -178,6 +253,21 @@ public class DateTimeUtils {
         return NSCalendar.current.date(from: comps)!
     }
 
+    /**
+     * Adds n years to a Date object.
+     *
+     * - Parameter date: the input Date object
+     * - Parameter numYears: the number of years to add
+     *
+     * - Returns: the result Date object
+     */
+    @available(iOS, introduced: 1.3)
+    public static func addYears(_ date: Date, numYears: Int) -> Date {
+        var comps = Calendar.current.dateComponents(FULL_DATE_COMPONENTS, from: date)
+        //comps.year is wrong!
+        comps.yearForWeekOfYear! += numYears
+        return Calendar.current.date(from: comps)!
+    }
 
     /**
      * Resets to start of the week (day is set to 'first week day'; hour, minute, second and nanosecond are set to 0s) of a Date object.
@@ -196,5 +286,18 @@ public class DateTimeUtils {
             weekday = CAL.component(Calendar.Component.weekday, from: result)
         }
         return result
+    }
+
+    /**
+     * Adds n weeks to a Date object.
+     *
+     * - Parameter date: the input Date object
+     * - Parameter numWeeks: the number of weeks to add (1 week = 7 days)
+     *
+     * - Returns: the result Date object
+     */
+    @available(iOS, introduced: 1.3)
+    public static func addWeeks(_ date: Date, numWeeks: Int) -> Date {
+        return addDays(date, numDays: numWeeks*7)
     }
 }
