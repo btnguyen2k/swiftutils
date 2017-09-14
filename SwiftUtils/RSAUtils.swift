@@ -128,14 +128,14 @@ public class RSAUtils {
         }
 
         // Add persistent version of the key to system keychain
-        let queryFilter = [
-            String(kSecClass)              : kSecClassKey,
-            String(kSecAttrKeyType)        : kSecAttrKeyTypeRSA,
-            String(kSecAttrApplicationTag) : tagName,
-            //String(kSecAttrAccessible)     : kSecAttrAccessibleWhenUnlocked,
-            String(kSecValueData)          : privkeyData!,
-            String(kSecAttrKeyClass)       : kSecAttrKeyClassPrivate,
-            String(kSecReturnPersistentRef): true
+        let queryFilter: [String : Any] = [
+            (kSecClass as String)              : kSecClassKey,
+            (kSecAttrKeyType as String)        : kSecAttrKeyTypeRSA,
+            (kSecAttrApplicationTag as String) : tagName,
+            //(kSecAttrAccessible as String)     : kSecAttrAccessibleWhenUnlocked,
+            (kSecValueData as String)          : privkeyData!,
+            (kSecAttrKeyClass as String)       : kSecAttrKeyClassPrivate,
+            (kSecReturnPersistentRef as String): true
             ] as [String : Any]
         let result = SecItemAdd(queryFilter as CFDictionary, nil)
         if ((result != noErr) && (result != errSecDuplicateItem)) {
@@ -247,13 +247,13 @@ public class RSAUtils {
 
         // Add persistent version of the key to system keychain
         //var prt1: Unmanaged<AnyObject>?
-        let queryFilter = [
-            String(kSecClass)              : kSecClassKey,
-            String(kSecAttrKeyType)        : kSecAttrKeyTypeRSA,
-            String(kSecAttrApplicationTag) : tagName,
-            String(kSecValueData)          : pubkeyData!,
-            String(kSecAttrKeyClass)       : kSecAttrKeyClassPublic,
-            String(kSecReturnPersistentRef): true
+        let queryFilter: [String : Any] = [
+            (kSecClass as String)              : kSecClassKey,
+            (kSecAttrKeyType as String)        : kSecAttrKeyTypeRSA,
+            (kSecAttrApplicationTag as String) : tagName,
+            (kSecValueData as String)          : pubkeyData!,
+            (kSecAttrKeyClass as String)       : kSecAttrKeyClassPublic,
+            (kSecReturnPersistentRef as String): true
             ] as [String : Any]
         let result = SecItemAdd(queryFilter as CFDictionary, nil)
         if ((result != noErr) && (result != errSecDuplicateItem)) {
