@@ -101,7 +101,7 @@ public class RSAUtils {
      */
     @available(iOS, introduced: 1.2.0)
     @discardableResult public static func addRSAPrivateKey(_ privkeyBase64: String, tagName: String) throws -> SecKey? {
-        let fullRange = NSRange(location: 0, length: privkeyBase64.characters.count)
+        let fullRange = NSRange(location: 0, length: privkeyBase64.count)
         let regExp = try! NSRegularExpression(pattern: "(-----BEGIN.*?-----)|(-----END.*?-----)|\\s+", options: [])
         let myPrivkeyBase64 = regExp.stringByReplacingMatches(in: privkeyBase64, options: [], range: fullRange, withTemplate: "")
         return try addRSAPrivateKey(base64Decode(myPrivkeyBase64), tagName: tagName)
@@ -221,7 +221,7 @@ public class RSAUtils {
     @available(iOS, introduced: 1.2.0)
     public static func addRSAPublicKey(_ pubkeyBase64: String, tagName: String) throws -> SecKey? {
         let regExp = try! NSRegularExpression(pattern: "(-----BEGIN.*?-----)|(-----END.*?-----)|\\s+", options: [])
-        let myPubkeyBase64 = regExp.stringByReplacingMatches(in: pubkeyBase64, options: [], range: NSRange(location: 0, length: pubkeyBase64.characters.count), withTemplate: "")
+        let myPubkeyBase64 = regExp.stringByReplacingMatches(in: pubkeyBase64, options: [], range: NSRange(location: 0, length: pubkeyBase64.count), withTemplate: "")
         return try addRSAPublicKey(base64Decode(myPubkeyBase64), tagName: tagName)
     }
 
