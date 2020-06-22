@@ -127,6 +127,7 @@
 					5F3B732E1EF291AF00876E32 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 7T2WS9KVUZ;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {

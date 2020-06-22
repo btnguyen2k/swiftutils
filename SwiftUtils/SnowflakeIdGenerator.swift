@@ -449,7 +449,7 @@ public class SnowflakeIdGenerator {
     public func generateId128Hex() -> String {
         let result = self.generateId128()
         var tail = String(result[1], radix: 16)
-        while ( tail.characters.count < 16 ) {
+        while ( tail.count < 16 ) {
             tail.insert("0", at: tail.startIndex)
         }
         return String(result[0], radix: 16) + tail
@@ -467,7 +467,7 @@ public class SnowflakeIdGenerator {
     public func generateId128Bin() -> String {
         let result = self.generateId128()
         var tail = String(result[1], radix: 2)
-        while ( tail.characters.count < 64 ) {
+        while ( tail.count < 64 ) {
             tail.insert("0", at: tail.startIndex)
         }
         return String(result[0], radix: 2) + tail
