@@ -666,6 +666,6 @@ public class RSAUtils {
             return nil
         }
 
-        return decryptWithRSAKey(encryptedData, rsaKeyRef: keyRef!, padding: PADDING_FOR_DECRYPT)
+        return decryptWithRSAKey(encryptedData, rsaKeyRef: keyRef!, padding: SecPadding.OAEP)
     }
 }
