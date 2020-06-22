@@ -101,7 +101,7 @@ public class RSAUtils {
      */
     @available(iOS, introduced: 1.2.0)
     @discardableResult public static func addRSAPrivateKey(_ privkeyBase64: String, tagName: String) throws -> SecKey? {
-        let fullRange = NSRange(location: 0, length: privkeyBase64.characters.count)
+        let fullRange = NSRange(location: 0, length: privkeyBase64.lengthOfBytes(using: .utf8))
         let regExp = try! NSRegularExpression(pattern: "(-----BEGIN.*?-----)|(-----END.*?-----)|\\s+", options: [])
         let myPrivkeyBase64 = regExp.stringByReplacingMatches(in: privkeyBase64, options: [], range: fullRange, withTemplate: "")
         return try addRSAPrivateKey(base64Decode(myPrivkeyBase64), tagName: tagName)
@@ -128,14 +128,14 @@ public class RSAUtils {
         }
 
         // Add persistent version of the key to system keychain
-        let queryFilter = [
-            String(kSecClass)              : kSecClassKey,
-            String(kSecAttrKeyType)        : kSecAttrKeyTypeRSA,
-            String(kSecAttrApplicationTag) : tagName,
-            //String(kSecAttrAccessible)     : kSecAttrAccessibleWhenUnlocked,
-            String(kSecValueData)          : privkeyData!,
-            String(kSecAttrKeyClass)       : kSecAttrKeyClassPrivate,
-            String(kSecReturnPersistentRef): true
+        let queryFilter: [String : Any] = [
+            (kSecClass as String)              : kSecClassKey,
+            (kSecAttrKeyType as String)        : kSecAttrKeyTypeRSA,
+            (kSecAttrApplicationTag as String) : tagName,
+            //(kSecAttrAccessible as String)     : kSecAttrAccessibleWhenUnlocked,
+            (kSecValueData as String)          : privkeyData!,
+            (kSecAttrKeyClass as String)       : kSecAttrKeyClassPrivate,
+            (kSecReturnPersistentRef as String): true
             ] as [String : Any]
         let result = SecItemAdd(queryFilter as CFDictionary, nil)
         if ((result != noErr) && (result != errSecDuplicateItem)) {
@@ -220,8 +220,9 @@ public class RSAUtils {
      */
     @available(iOS, introduced: 1.2.0)
     public static func addRSAPublicKey(_ pubkeyBase64: String, tagName: String) throws -> SecKey? {
+        let fullRange = NSRange(location: 0, length: pubkeyBase64.lengthOfBytes(using: .utf8))
         let regExp = try! NSRegularExpression(pattern: "(-----BEGIN.*?-----)|(-----END.*?-----)|\\s+", options: [])
-        let myPubkeyBase64 = regExp.stringByReplacingMatches(in: pubkeyBase64, options: [], range: NSRange(location: 0, length: pubkeyBase64.characters.count), withTemplate: "")
+        let myPubkeyBase64 = regExp.stringByReplacingMatches(in: pubkeyBase64, options: [], range: fullRange, withTemplate: "")
         return try addRSAPublicKey(base64Decode(myPubkeyBase64), tagName: tagName)
     }
 
@@ -247,13 +248,13 @@ public class RSAUtils {
 
         // Add persistent version of the key to system keychain
         //var prt1: Unmanaged<AnyObject>?
-        let queryFilter = [
-            String(kSecClass)              : kSecClassKey,
-            String(kSecAttrKeyType)        : kSecAttrKeyTypeRSA,
-            String(kSecAttrApplicationTag) : tagName,
-            String(kSecValueData)          : pubkeyData!,
-            String(kSecAttrKeyClass)       : kSecAttrKeyClassPublic,
-            String(kSecReturnPersistentRef): true
+        let queryFilter: [String : Any] = [
+            (kSecClass as String)              : kSecClassKey,
+            (kSecAttrKeyType as String)        : kSecAttrKeyTypeRSA,
+            (kSecAttrApplicationTag as String) : tagName,
+            (kSecValueData as String)          : pubkeyData!,
+            (kSecAttrKeyClass as String)       : kSecAttrKeyClassPublic,
+            (kSecReturnPersistentRef as String): true
             ] as [String : Any]
         let result = SecItemAdd(queryFilter as CFDictionary, nil)
         if ((result != noErr) && (result != errSecDuplicateItem)) {
